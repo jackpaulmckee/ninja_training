@@ -3,10 +3,12 @@ network_troubleshooting_notes
 
 the console port and mgmt port both lead to OOB management interfaces
 
+
 mgmt port - network OOB
   - you connect via ssh
   - when you connect, you land in the BMC shell
   - mgmt port --> BMC (has it's own isolated cpu, ram, and OS)
+
 
 console port 
   - serial / direct OOB
@@ -16,6 +18,7 @@ console port
   - console port --> UART chip --> BMC --> motherboard --> CPU
   - this connection to the CPU is on as long as there is electrons flowing through the CPU. You can watch as the BIOS boots or as the host OS crashes
   - very slow bandwidth. Meant for text based interface only
+
 
 data plane ports
   - you connect via ssh or rdp
