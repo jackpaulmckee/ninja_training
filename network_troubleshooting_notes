@@ -11,3 +11,30 @@ console port
   - serial / direct OOB
   - does not speak TCP/IP
   - to connect, you have to use a serial terminal client to run the Serial Protocol (not ssh) and a specific baud rate
+  - when you connect, you land in the host OS
+  - this is a direct connection to the CPU. You can watch as the BIOS boots or as the host OS crashes
+  - very slow bandwidth. Meant for text based interface only
+
+data plane ports
+  - you connect via ssh or rdp
+  - when you connect, you land in the host OS
+  - this connection is only possible if multiple network and device conditions are setup properly. If any of the conditions are misconfigured, you immediately lose connection and access. See below
+  - can have very high bandwidth. Meant for the bulk of the data to flow. Can use GUIs through this path
+
+
+What Needs to Be Working Inside the OS?
+Requirement⬇️	                           Host OS via Console (Serial)⬇️	                                     Host OS via Production Ethernet (In-Band)⬇️
+OS State	                                Single-user mode, recovery mode, or early boot	                       Fully booted multi-user OS
+NIC Drivers	                              ❌ Not needed	                                                         Must be loaded & initialized
+IP / Subnet Config	                      ❌ Not needed	                                                         Valid IP/Gateway must be assigned
+Host Firewall (iptables/ufw)	            ❌ Completely bypasses it	                                           Port 22/3389 must be allowed
+Routing / Switching	                      ❌ Not needed	                                                         Upstream switches, VLANs, and routers must be functional
+SSH Daemon (sshd)	                        ❌ Not needed (managed by getty/agetty)	                               Must be running and healthy
+
+Production Ethernet: If someone typo’s a firewall rule (ufw enable locking out port 22), accidentally deletes the default gateway, misconfigures a bond/VLAN, or if sshd crashes, your connection drops and you are locked out.
+Console: Because it is handled by the kernel via a basic serial terminal service (like ttyS0), none of the network stack matters. If the network completely breaks, the console still works.
+
+
+
+
+baud rate (symbol rate): the amount of electrical signal traveling down a communication channel (a cable) per unit time. Seems complicated. I still dont understand after a brief search
