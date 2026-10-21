@@ -1,0 +1,13 @@
+network_troubleshooting_notes
+
+
+the console port and mgmt port both lead to OOB management interfaces
+
+mgmt port - network OOB
+  - you connect via ssh
+  - when you connect, you land in the BMC shell
+
+console port 
+  - serial / direct OOB
+  - does not speak TCP/IP
+  - to connect, you have to use a serial terminal client to run the Serial Protocol (not ssh) and a specific baud rate
