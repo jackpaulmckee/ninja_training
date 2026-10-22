@@ -4,6 +4,8 @@ network_troubleshooting_notes
 the console port and mgmt port both lead to OOB management interfaces
 
 
+-------------------------for a server--------------------------------------------------------------------------------------------------------------------------------------------------
+
 mgmt port - network OOB
   - you connect via ssh
   - when you connect, you land in the BMC shell
@@ -43,4 +45,27 @@ Console: Because it is handled by the kernel via a basic serial terminal service
 
 
 
+-------------------------for a switch--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
 baud rate (symbol rate): the amount of electrical signal traveling down a communication channel (a cable) per unit time. Seems complicated. I still dont understand after a brief search
+
+
+
+
+
+
+
+
+Uplink Port vs. Normal (Downlink) Port:
+Feature	                              Uplink Port	                                                                                  Normal / Downlink Port
+Primary Destination	                  Connected to a higher-layer network device (e.g., core switch, router).	                      Connected to local end-user devices (e.g., PCs, printers).
+Traffic Handling	                    Aggregates and funnels massive amounts of outbound network traffic.	                          Handles single-device local segment traffic.
+Common Hardware	                      Typically SFP+, SFP28, or QSFP fiber interfaces.	                                            Typically standard RJ45 Ethernet ports.
+
