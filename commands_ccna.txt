@@ -1,0 +1,60 @@
+commands_ccna
+
+
+=====
+Cisco IOS
+=========================================
+
+do
+enable
+configure terminal
+copy running-config startup-config
+
+
+++++++ROUTER+++++
+show ip interface brief
+show interfaces description
+interface <g0/0>
+ip address <ip_address> <subnet_mask>
+description <description>
+shutdown
+no shutdown
+show ip route
+ip route <ip_address> <net_mask> <exit_interface> <next_hop_ip>
+show running-config | include ip route
+interface <g0/0.10>
+encapsulation dot1q 10
+show ip arp
+
+
+
+++++++SWITCH++++++++++
+show interfaces status
+speed <100>
+duplex <full>
+interface range <f0/3 - 8>
+interface range <f0/3 - 6, f0/9 - 12>
+show interfaces <f0/1>
+switchport mode access
+switchport access vlan <#>
+vlan <#>
+name <name>
+switchport trunk encapsulation dot1q
+switchport mode trunk
+show vlan brief
+show interfaces trunk
+switchport trunk allowed vlan ?
+switchport trunk native vlan <#>
+show mac address-table
+
+
+
+
+
+
+
+=====
+Windows Command Prompt
+=========================================
+
+
