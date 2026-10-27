@@ -75,6 +75,10 @@ Teaming:
 
 
 
+LOM (LAN On Motherboard) - standard fixed eth ports qty(2) on the back of the cisco server, soldered directly to the motherboard
+PCIe cards - expansion slots on the back of a server that allow a GPU, storage controller, NIC, or other hardware expansion slot modification
+MLOM (Modular LOM) - swappable eth ports qty(2) on the back of the cisco server, can be upgraded based on need, don't need to take up a full PCIe slot
+
 
 
 
