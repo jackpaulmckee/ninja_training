@@ -51,7 +51,8 @@ Console: Because it is handled by the kernel via a basic serial terminal service
 Teaming:
   - on the back of a server, you install multiple physical NICs (pNICs) and aggregate them to handle the data plane traffic throughput.
   - Within the virtual environment of the server, the VMs process the workload --> data plane traffic is directed via the virtual switch which also exists within your server's virtual env --> traffic flows through the pNICS
-  - this setup of multiple pNICs provides for network redundancy and load distribution
+  - this setup of multiple pNICs provides for network redundancy and load balancing
+  - there is 1 pNIC per each LOM port and MLOM port on the server
 
 
 [ Physical Server / ESXi Host ]
